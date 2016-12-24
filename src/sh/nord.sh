@@ -12,7 +12,7 @@
 [[ -z "$DCONF" ]] && DCONF=dconf
 [[ -z "$UUIDGEN" ]] && UUIDGEN=uuidgen
 
-NORD_GNOME_TERMINAL_VERSION=
+NORD_GNOME_TERMINAL_VERSION=0.1.0
 
 dset() {
   local key="$1"; shift
