@@ -70,8 +70,11 @@ if which "$DCONF" > /dev/null 2>&1; then
     dset use-theme-transparency "false"
     dset use-transparent-background "false"
     dset cursor-colors-set "true"
-    dset cursor-foreground-color "rgb(59,66,82)"
-    dset cursor-background-color "rgb(216,222,233)"
+    dset cursor-foreground-color "'rgb(59,66,82)'"
+    dset cursor-background-color "'rgb(216,222,233)'"
+    dset highlight-colors-set "true"
+    dset highlight-foreground-color "'rgb(46,52,64)'"
+    dset highlight-background-color "'rgb(136,192,208)'"
 
     unset PROFILE_NAME
     unset PROFILE_SLUG
