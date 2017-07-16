@@ -67,6 +67,8 @@ if which "$DCONF" > /dev/null 2>&1; then
     dset bold-color-same-as-fg "true"
     dset use-theme-colors "false"
     dset use-theme-background "false"
+    dset use-theme-transparency "false"
+    dset use-transparent-background "false"
 
     unset PROFILE_NAME
     unset PROFILE_SLUG
