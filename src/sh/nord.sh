@@ -122,6 +122,15 @@ gset string bold_color "#D8DEE9"
 gset bool bold_color_same_as_fg "true"
 gset bool use_theme_colors "false"
 gset bool use_theme_background "false"
+gset use_theme_transparency "false"
+gset use_transparent_background "false"
+gset cursor_colors_set "true"
+gset cursor_foreground_color "rgb(59,66,82)"
+gset cursor_background_color "rgb(216,222,233)"
+gset highlight_colors_set "true"
+gset highlight_foreground_color "rgb(46,52,64)"
+gset highlight_background_color "rgb(136,192,208)"
+
 
 unset PROFILE_NAME
 unset PROFILE_SLUG
