@@ -12,6 +12,21 @@ Based on the <a href="https://github.com/arcticicestudio/nord">Nord</a> color pa
 <p align="center"><img src="https://raw.githubusercontent.com/arcticicestudio/nord-gnome-terminal/develop/src/assets/scrot-colortest.png"/><blockquote>Font: <a href="https://adobe-fonts.github.io/source-code-pro">Source Code Pro</a> 12px.</blockquote></p>
 
 ## Getting started
+
+### Requirements
+
+The installation script requires [`dconf`][dconf] and `uuidgen` ([`util-linux`][util-linux]) to be available on your *PATH* to create a new profile and generate a random profile UUID.
+
+Some distributions may require additional package(s):
+
+* `dconf-tools` - transitional package for `dconf-cli` and `dconf-editor` ([Debian][debian-dconf-tools], [Mint][mint-dconf-tools], [Ubuntu][ubuntu-dconf-tools])
+* `dconf-gsettings-backend` to ensure *GSettings* compatibility ([Debian][debian-dconf-gsettings-backend], [Mint][mint-dconf-gsettings-backend], [Ubuntu][ubuntu-dconf-gsettings-backend])
+* `dconf-cli` to ensure full CLI support ([Debian][debian-dconf-cli], [Mint][mint-dconf-cli], [Ubuntu][ubuntu-dconf-cli])
+* `dconf-service`  to ensure D-Bus support for the *GSettings* backend ([Debian][debian-dconf-service], [Mint][mint-dconf-service], [Ubuntu][ubuntu-dconf-service])
+* `uuid-runtime` to provide runtime components for the Universally Unique ID library ([Debian][debian-uuid-runtime], [Mint][mint-uuid-runtime], [Ubuntu][ubuntu-uuid-runtime])
+
+The packages should be available for all distributions using the GNOME Terminal by default.
+
 ### Installation
 Run the [`nord.sh`](https://github.com/arcticicestudio/nord-gnome-terminal/blob/develop/src/sh/nord.sh) shell script to create the `Nord` GNOME Terminal profile.
 
@@ -44,5 +59,22 @@ Please report issues/bugs, feature requests and suggestions for improvements to 
 
 <p align="center"><a href="http://www.apache.org/licenses/LICENSE-2.0"><img src="https://img.shields.io/badge/License-Apache_2.0-5E81AC.svg?style=flat-square"/></a> <a href="https://creativecommons.org/licenses/by-sa/4.0"><img src="https://img.shields.io/badge/License-CC_BY--SA_4.0-5E81AC.svg?style=flat-square"/></a></p>
 
+[dconf]: https://wiki.gnome.org/Projects/dconf
+[debian-dconf-cli]: https://packages.debian.org/search?keywords=dconf-cli
+[debian-dconf-gsettings-backend]: https://packages.debian.org/search?keywords=dconf-gsettings-backend
+[debian-dconf-service]: https://packages.debian.org/search?keywords=dconf-service
+[debian-dconf-tools]: https://packages.debian.org/search?keywords=dconf-tools
+[debian-uuid-runtime]: https://packages.debian.org/search?keywords=uuid-runtime
+[mint-dconf-cli]: https://community.linuxmint.com/software/view/dconf-cli
+[mint-dconf-gsettings-backend]: https://community.linuxmint.com/software/view/dconf-gsettings-backend
+[mint-dconf-service]: https://community.linuxmint.com/software/view/dconf-service
+[mint-dconf-tools]: https://community.linuxmint.com/software/view/dconf-tools
+[mint-uuid-runtime]: https://community.linuxmint.com/software/view/uuid-runtime
 [scrot-readme-default-profile]: https://raw.githubusercontent.com/arcticicestudio/nord-gnome-terminal/develop/src/assets/scrot-readme-default-profile.png
 [scrot-readme-lazy-profile-change]: https://raw.githubusercontent.com/arcticicestudio/nord-gnome-terminal/develop/src/assets/scrot-readme-lazy-profile-change.png
+[ubuntu-dconf-cli]: https://packages.ubuntu.com/search?keywords=dconf-cli
+[ubuntu-dconf-gsettings-backend]: https://packages.ubuntu.com/search?keywords=dconf-gsettings-backend
+[ubuntu-dconf-service]: https://packages.ubuntu.com/search?keywords=dconf-service
+[ubuntu-dconf-tools]: https://packages.ubuntu.com/search?keywords=dconf-tools
+[ubuntu-uuid-runtime]: https://packages.ubuntu.com/search?keywords=uuid-runtime
+[util-linux]: https://www.kernel.org/pub/linux/utils/util-linux
