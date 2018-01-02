@@ -1,14 +1,10 @@
 #!/usr/bin/env bash
+# Copyright (c) 2016-present Arctic Ice Studio <development@arcticicestudio.com>
+# Copyright (c) 2016-present Sven Greb <code@svengreb.de>
 
-# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-# title      Nord GNOME Terminal                                    +
-# project    nord-gnome-terminal                                    +
-# version    0.1.0                                                  +
-# repository https://github.com/arcticicestudio/nord-gnome-terminal +
-# author     Arctic Ice Studio                                      +
-# email      development@arcticicestudio.com                        +
-# copyright  Copyright (C) 2017                                     +
-# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# Project:    Nord GNOME Terminal
+# Repository: https://github.com/arcticicestudio/nord-gnome-terminal
+# License:    MIT
 
 set -e
 
