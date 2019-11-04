@@ -20,7 +20,7 @@ append_profile_uuid_to_list() {
   gsettings set "$GSETTINGS_PROFILELIST_PATH" list "${list%]*}, '$uuid']"
 }
 
-# Writes the Nord GNOME Terminal theme colors and configurations as dconf key-value pairs to the taregt profile.
+# Writes the Nord GNOME Terminal theme colors and configurations as dconf key-value pairs to the target profile.
 #
 # @globread profile_name
 # @return none
