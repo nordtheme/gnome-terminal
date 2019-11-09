@@ -29,9 +29,17 @@ The packages should be available for all distributions using the GNOME Terminal 
 
 ### Installation
 
-Run the [`nord.sh`](https://github.com/arcticicestudio/nord-gnome-terminal/blob/develop/src/nord.sh) shell script to start the automated installation.
 
-A list of available options can be shown with `-h`, ``--help`.
+
+1. Clone this repository 
+    ```sh
+    git clone https://github.com/arcticicestudio/nord-gnome-terminal.git
+    cd nord-gnome-terminal/src
+    ```
+
+2. Run the [`nord.sh`](https://github.com/arcticicestudio/nord-gnome-terminal/blob/develop/src/nord.sh) shell script to start the automated installation.
+
+A list of available options can be shown with `-h`, `--help`.
 
 ```sh
 ./nord.sh --help
@@ -46,7 +54,7 @@ A list of available options can be shown with `-h`, ``--help`.
   * `2` *SUCCESS* (default)
   * `3` *INFO*
   * `4` *DEBUG*
-* `-p`, `--profile <PROFILE_NAME>`, `--profile=<PROFILE_NAME>` - The name of the profile to use for the theme. If not specified a new profile as clone of the *default* profile will be created.
+* `-p`, `--profile <PROFILE_NAME>`, `--profile=<PROFILE_NAME>` - The name of the profile to install the theme to. If not specified a new profile as clone of the *default* profile will be created.
 
 <!-- TODO: It will create a `Nord` GNOME Terminal profile. -->
 
