@@ -1,6 +1,6 @@
 <p align="center"><img src="https://cdn.rawgit.com/arcticicestudio/nord-gnome-terminal/develop/assets/nord-gnome-terminal-banner.svg"/></p>
 
-<p align="center"><a href="https://github.com/arcticicestudio/nord-gnome-terminal/releases/latest"><img src="https://img.shields.io/github/release/arcticicestudio/nord-gnome-terminal.svg?style=flat-square"/></a> <a href="https://github.com/arcticicestudio/nord/releases/tag/v0.2.0"><img src="https://img.shields.io/badge/Nord-v0.2.0-88C0D0.svg?style=flat-square"/></a></p>
+<p align="center"><a href="https://github.com/arcticicestudio/nord-gnome-terminal/releases/latest"><img src="https://img.shields.io/github/v/release/arcticicestudio/nord-gnome-terminal.svg?style=flat-square&color=88C0D0&label=Release"/></a> <a href="https://github.com/arcticicestudio/nord/releases/tag/v0.2.0"><img src="https://img.shields.io/badge/Nord-v0.2.0-88C0D0.svg?style=flat-square"/></a></p>
 
 <p align="center">An arctic, north-bluish clean and elegant <a href="https://wiki.gnome.org/Apps/Terminal">GNOME Terminal</a> color theme.</p>
 
