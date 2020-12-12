@@ -73,11 +73,6 @@ apply() {
   _write highlight-background-color "'$nord8_rgb'"
   log 4 "Applied highlight colors and configuration"
 
-  _write highlight-colors-set "true"
-  _write highlight-foreground-color "'$nord0_rgb'"
-  _write highlight-background-color "'$nord8_rgb'"
-  log 4 "Applied highlight colors and configuration"
-
   _write "$NORD_GNOME_TERMINAL_VERSION_DCONF_KEY" "'$NORD_GNOME_TERMINAL_VERSION'"
   log 4 "Set Nord GNOME Terminal version key of the '$profile_name' profile"
 
