@@ -1,12 +1,10 @@
 #!/usr/bin/env bash
-# Copyright (c) 2016-present Arctic Ice Studio <development@arcticicestudio.com>
-# Copyright (c) 2016-present Sven Greb <code@svengreb.de>
+# Copyright (c) 2016-present Sven Greb <development@svengreb.de>
+# This source code is licensed under the MIT license found in the license file.
 
-# Project:    Nord GNOME Terminal
-# Repository: https://github.com/arcticicestudio/nord-gnome-terminal
-# License:    MIT
-
-set -e
+# nounset: Treat unset variables and parameters as an error when performing parameter expansion
+# errexit: Exit immediately if any command exits with a non-zero status
+set -o nounset -o errexit
 
 # Appends the given profile UUID to the profile list.
 #
@@ -395,7 +393,7 @@ while true; do
 done
 
 if validate_dependencies DEPENDENCIES[@]; then
-  
+
   if ! check_migrated_version_comp; then
     log 0 "The installed GNOME Terminal version '$gnome_terminal_version' is not compatible with the required (dconf migrated) version >= 3.8!"
     exit 1
