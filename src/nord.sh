@@ -266,7 +266,9 @@ print_help() {
 # @return 0 if all required dependencies are validated, 1 otherwise
 # @since 0.2.0
 validate_dependencies() {
-  declare -a missing_deps deps=("${!1}")
+  declare -a deps missing_deps
+  deps=("${!1}")
+  missing_deps=()
   for exec in "${deps[@]}"; do
     if ! command -v "${exec}" > /dev/null 2>&1; then
       missing_deps+=(${exec})
