@@ -40,9 +40,9 @@ apply() {
     nord15="#B48EAD"
   local \
     nord0_rgb="rgb(46,52,64)"
-    nord1_rgb="rgb(59,66,82)"
-    nord4_rgb="rgb(216,222,233)"
-    nord8_rgb="rgb(136,192,208)"
+  nord1_rgb="rgb(59,66,82)"
+  nord4_rgb="rgb(216,222,233)"
+  nord8_rgb="rgb(136,192,208)"
 
   _write palette "['$nord1', '$nord11', '$nord14', '$nord13', '$nord9', '$nord15', '$nord8', '$nord5', '$nord3', '$nord11', '$nord14', '$nord13', '$nord9', '$nord15', '$nord7', '$nord6']"
   log 4 "Applied Nord color palette"
@@ -85,34 +85,43 @@ apply() {
 apply_version_compared() {
   local version
   version=$1
-  case "$(vercomp "$NORD_GNOME_TERMINAL_VERSION" "$version"; echo $?)" in
+  case "$(
+    vercomp "$NORD_GNOME_TERMINAL_VERSION" "$version"
+    echo $?
+  )" in
     0)
-      log 3 "Reinstalling Nord GNOME Terminal since the version equaled the version of the '$profile_name' profile!";
-      apply;
-      log 2 "Reinstalled Nord GNOME Terminal version $NORD_GNOME_TERMINAL_VERSION for the '$profile_name' profile!";
-      exit 0;;
+      log 3 "Reinstalling Nord GNOME Terminal since the version equaled the version of the '$profile_name' profile!"
+      apply
+      log 2 "Reinstalled Nord GNOME Terminal version $NORD_GNOME_TERMINAL_VERSION for the '$profile_name' profile!"
+      exit 0
+      ;;
     1)
       log 4 "The script version is newer than the currently installed theme ($NORD_GNOME_TERMINAL_VERSION > $version)"
-      apply;
-      log 2 "The '$profile_name' profile has been updated successfully from version $version to $NORD_GNOME_TERMINAL_VERSION";
-      exit 0;;
+      apply
+      log 2 "The '$profile_name' profile has been updated successfully from version $version to $NORD_GNOME_TERMINAL_VERSION"
+      exit 0
+      ;;
     2)
-      log 1 "The detected Nord GNOME Terminal version $version of the '$profile_name' profile is greater than the version that will be applied!";
+      log 1 "The detected Nord GNOME Terminal version $version of the '$profile_name' profile is greater than the version that will be applied!"
       printf "${_ctb}> [?]${_ct} Override current profile version %s with script version %s? (${_ctb}y${_cr}/${_ctb}n${_cr})" "$version" "$NORD_GNOME_TERMINAL_VERSION"
-      read -r -n 1 -s confirmation;
+      read -r -n 1 -s confirmation
       echo
       case $confirmation in
-        [Yy]* )
-          apply;
-          log 2 "Nord GNOME Terminal version $NORD_GNOME_TERMINAL_VERSION has been successfully applied!";
-          exit 0;;
-        [Nn]* )
-          log 0 "Installation canceled by user!";
-          exit 1;;
-        * )
-          log 0 "'$confirmation' is not a valid input!";
-          exit 1;;
+        [Yy]*)
+          apply
+          log 2 "Nord GNOME Terminal version $NORD_GNOME_TERMINAL_VERSION has been successfully applied!"
+          exit 0
+          ;;
+        [Nn]*)
+          log 0 "Installation canceled by user!"
+          exit 1
+          ;;
+        *)
+          log 0 "'$confirmation' is not a valid input!"
+          exit 1
+          ;;
       esac
+      ;;
   esac
 }
 
@@ -123,9 +132,9 @@ apply_version_compared() {
 # @since 0.2.0
 check_migrated_version_comp() {
   gnome_terminal_version="$(expr "$(LANGUAGE=en_US.UTF-8 gnome-terminal --version)" : '^[^[:digit:]]* \(\([[:digit:]]*\.*\)*\)')"
-  if [[ ("$(echo "$gnome_terminal_version" | cut -d"." -f1)" = "3" && \
-         "$(echo "$gnome_terminal_version" | cut -d"." -f2)" -ge 8) || \
-         "$(echo "$gnome_terminal_version" | cut -d"." -f1)" -ge 4 ]]; then
+  if [[ ("$(echo "$gnome_terminal_version" | cut -d"." -f1)" = "3" &&
+  "$(echo "$gnome_terminal_version" | cut -d"." -f2)" -ge 8) ||
+  "$(echo "$gnome_terminal_version" | cut -d"." -f1)" -ge 4 ]]; then
     log 3 "Detected compatible GNOME Terminal version $gnome_terminal_version (>= 3.8 dconf migrated)"
     return 0
   else
@@ -221,7 +230,7 @@ get_profile_uuid_by_name() {
 #   _ctb_warning
 # @return none
 # @since 0.2.0
-log () {
+log() {
   declare -a label color
   local num_regex='^[0-9]+$'
   local level=$1
@@ -300,13 +309,13 @@ vercomp() {
   local i v1=($1) v2=($2)
 
   # Fill empty fields with zeros
-  for ((i=${#v1[@]}; i<${#v2[@]}; i++)); do
+  for ((i = ${#v1[@]}; i < ${#v2[@]}; i++)); do
     v1[i]=0
   done
 
-  for ((i=0; i<${#v1[@]}; i++)); do
+  for ((i = 0; i < ${#v1[@]}; i++)); do
     if [[ -z ${v2[i]} ]]; then
-     # Fill empty fields with zeros
+      # Fill empty fields with zeros
       v2[i]=0
     fi
 
@@ -383,13 +392,32 @@ profile_uuid=
 eval set -- "$NORD_GNOME_TERMINAL_SCRIPT_OPTS"
 while true; do
   case "$1" in
-    --loglevel=* ) log_level=${1#*=}; shift ;;
-    -l | --loglevel ) log_level=$2; shift ;;
-    -h | --help ) print_help; exit 0; break ;;
-    --profile=* ) profile_name=${1#*=}; shift ;;
-    -p | --profile ) profile_name=$2; shift ;;
-    -- ) shift; break ;;
-    * ) break ;;
+    --loglevel=*)
+      log_level=${1#*=}
+      shift
+      ;;
+    -l | --loglevel)
+      log_level=$2
+      shift
+      ;;
+    -h | --help)
+      print_help
+      exit 0
+      break
+      ;;
+    --profile=*)
+      profile_name=${1#*=}
+      shift
+      ;;
+    -p | --profile)
+      profile_name=$2
+      shift
+      ;;
+    --)
+      shift
+      break
+      ;;
+    *) break ;;
   esac
   shift
 done
@@ -423,7 +451,7 @@ if validate_dependencies DEPENDENCIES[@]; then
         exit 0
       fi
     else
-      log 0 "$profile_name is not a valid profile name!";
+      log 0 "$profile_name is not a valid profile name!"
       exit 1
     fi
   fi
