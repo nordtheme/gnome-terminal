@@ -67,7 +67,7 @@ The packages should be available for all distributions using the GNOME Terminal 
 
 1. Clone this repository
    ```sh
-   git clone https://github.com/nordtheme/gnome-terminal.git
+   git clone https://github.com/nordtheme/gnome-terminal.git nord-gnome-terminal
    cd nord-gnome-terminal/src
    ```
 2. Run the [`nord.sh`](https://github.com/nordtheme/gnome-terminal/blob/develop/src/nord.sh) shell script to start the automated installation.
